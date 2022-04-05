@@ -1,0 +1,192 @@
+{
+    "_input": {
+        "@class": "AbinitInput",
+        "@module": "abipy.abio.inputs",
+        "abi_args": [
+            [
+                "ecut",
+                42.0
+            ],
+            [
+                "nstep",
+                500
+            ],
+            [
+                "nsppol",
+                1
+            ],
+            [
+                "occopt",
+                3
+            ],
+            [
+                "shiftk",
+                [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            [
+                "tolvrs",
+                1e-10
+            ],
+            [
+                "ngkpt",
+                [
+                    84,
+                    84,
+                    84
+                ]
+            ],
+            [
+                "kptopt",
+                1
+            ],
+            [
+                "nshiftk",
+                1
+            ],
+            [
+                "fband",
+                1.5
+            ],
+            [
+                "tsmear",
+                0.00225
+            ],
+            [
+                "chkprim",
+                0
+            ],
+            [
+                "nspinor",
+                1
+            ],
+            [
+                "rmm_diis",
+                0
+            ],
+            [
+                "chksymbreak",
+                0
+            ],
+            [
+                "ecutsm",
+                0.0
+            ],
+            [
+                "ionmov",
+                0
+            ],
+            [
+                "tolmxf",
+                5e-05
+            ],
+            [
+                "dilatmx",
+                1.0
+            ],
+            [
+                "optcell",
+                0
+            ],
+            [
+                "restartxf",
+                0
+            ]
+        ],
+        "comment": null,
+        "decorators": [],
+        "enforce_typat": null,
+        "enforce_znucl": null,
+        "pseudos": [
+            {
+                "@class": "NcAbinitPseudo",
+                "@module": "pymatgen.io.abinit.pseudos",
+                "Z": 1,
+                "Z_val": 1.0,
+                "basename": "H.psp8",
+                "filepath": "/Users/gmatteo/git_repos/H_pseudo/H.psp8",
+                "l_max": 1,
+                "md5": "20698c48a21fe3532638b4d685fd1c8b",
+                "symbol": "H",
+                "type": "NcAbinitPseudo"
+            }
+        ],
+        "structure": {
+            "@class": "Structure",
+            "@module": "abipy.core.structure",
+            "charge": null,
+            "lattice": {
+                "a": 1.80980775639396,
+                "alpha": 90.0,
+                "b": 1.80980775639396,
+                "beta": 90.0,
+                "c": 1.80980775639396,
+                "gamma": 90.0,
+                "matrix": [
+                    [
+                        1.80980775639396,
+                        0.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        1.80980775639396,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        0.0,
+                        1.80980775639396
+                    ]
+                ],
+                "volume": 5.927851772839443
+            },
+            "sites": [
+                {
+                    "abc": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "label": "H",
+                    "properties": {},
+                    "species": [
+                        {
+                            "element": "H",
+                            "occu": 1
+                        }
+                    ],
+                    "xyz": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "abc": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ],
+                    "label": "H",
+                    "properties": {},
+                    "species": [
+                        {
+                            "element": "H",
+                            "occu": 1
+                        }
+                    ],
+                    "xyz": [
+                        0.90490387819698,
+                        0.90490387819698,
+                        0.90490387819698
+                    ]
+                }
+            ]
+        },
+        "tags": []
+    }
+}

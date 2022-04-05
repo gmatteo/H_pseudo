@@ -1,0 +1,65 @@
+##############################################
+####                SECTION: basic               
+##############################################
+ ecut 42.0
+ nstep 500
+ nsppol 1
+ occopt 3
+ shiftk    0.0    0.0    0.0
+ tolvrs 1e-10
+ ngkpt 84 84 84
+ kptopt 1
+ nshiftk 1
+##############################################
+####               SECTION: gstate               
+##############################################
+ fband 1.5
+ tsmear 0.00225
+ chkprim 0
+ nspinor 1
+ rmm_diis 0
+ chksymbreak 0
+##############################################
+####                 SECTION: rlx                
+##############################################
+ ecutsm 0.0
+ ionmov 0
+ tolmxf 5e-05
+ dilatmx 1.0
+ optcell 0
+ restartxf 0
+##############################################
+####                  STRUCTURE                  
+##############################################
+ natom 2
+ ntypat 1
+ typat 1 1
+ znucl 1
+ xred
+    0.0000000000    0.0000000000    0.0000000000
+    0.5000000000    0.5000000000    0.5000000000
+ acell    1.0    1.0    1.0
+ rprim
+    3.4200409978    0.0000000000    0.0000000000
+    0.0000000000    3.4200409978    0.0000000000
+    0.0000000000    0.0000000000    3.4200409978
+
+
+#<JSON>
+#{
+#    "pseudos": [
+#        {
+#            "basename": "H.psp8",
+#            "type": "NcAbinitPseudo",
+#            "symbol": "H",
+#            "Z": 1,
+#            "Z_val": 1.0,
+#            "l_max": 1,
+#            "md5": "20698c48a21fe3532638b4d685fd1c8b",
+#            "filepath": "/Users/gmatteo/git_repos/H_pseudo/H.psp8",
+#            "@module": "pymatgen.io.abinit.pseudos",
+#            "@class": "NcAbinitPseudo"
+#        }
+#    ]
+#}
+#</JSON>
