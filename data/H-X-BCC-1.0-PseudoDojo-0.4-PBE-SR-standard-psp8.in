@@ -1,0 +1,62 @@
+# Plugin: abinit
+# Set: unaries-verification-PBE-v1
+# Pseudo family: PseudoDojo/0.4/PBE/SR/standard/psp8
+# Element: H
+# Configuration: X/BCC
+# Scaling factor: 1.0
+# EquationOfStateWorkChain UUID: dec0124a-0926-4d6b-b78e-4e1a04222ed6
+# AbinitCalculation UUID: e8d0476e-0ffd-453e-931e-4d8e2141c9b4
+##############################################
+####                SECTION: basic               
+##############################################
+ ecut 42.0
+ nstep 500
+ nsppol 1
+ occopt 3
+ shiftk    0.0    0.0    0.0
+ tolvrs 1e-10
+ ngkpt 84 84 84
+ kptopt 1
+ nshiftk 1
+##############################################
+####                SECTION: files               
+##############################################
+ pseudos "H.psp8"
+ pp_dirpath "./pseudo/"
+##############################################
+####               SECTION: gstate               
+##############################################
+ fband 1.5
+ tsmear 0.00225
+ chkprim 0
+ nspinor 1
+ rmm_diis 0
+ chksymbreak 0
+##############################################
+####                SECTION: paral               
+##############################################
+ autoparal 1
+##############################################
+####                 SECTION: rlx                
+##############################################
+ ecutsm 0.0
+ ionmov 0
+ tolmxf 5e-05
+ dilatmx 1.0
+ optcell 0
+ restartxf 0
+##############################################
+####                  STRUCTURE                  
+##############################################
+ natom 2
+ ntypat 1
+ typat 1 1
+ znucl 1
+ xred
+    0.0000000000    0.0000000000    0.0000000000
+    0.5000000000    0.5000000000    0.5000000000
+ acell    1.0    1.0    1.0
+ rprim
+    3.4200402307    0.0000000000    0.0000000000
+    0.0000000000    3.4200402307    0.0000000000
+    0.0000000000    0.0000000000    3.4200402307

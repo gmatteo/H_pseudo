@@ -1,0 +1,121 @@
+Here are the wien2k EOS data for H BCC and a little code snippet for loading the data from the JSON and printing it.
+I’ve attached the JSON files for wien2k and fleur (if you’d like to use the fleur data, just change the “plugin” variable.
+
+# Set: unaries-verification-PBE-v1
+# Element: H
+# Configuration: X/BCC
+# Plugin: wien2k
+# No. Atoms: 1
+# BM fit data
+E0 -1.4626326664034764e+01
+bulk_deriv 3.2615354041391607e+00
+bulk_modulus_ev_ang3 6.7467768156764230e-01
+min_volume 2.9667189620323997e+00
+residuals 3.9671790916184163e-09
+# EOS data
+# Volume Energy
+2.7860886995203789e+00 -1.4622272961430999e+01
+2.8453674250933840e+00 -1.4624550418403000e+01
+2.9046447700159037e+00 -1.4625875204742000e+01
+2.9639258864197213e+00 -1.4626325689242000e+01
+3.0232019324332353e+00 -1.4625973437847000e+01
+3.0824810521279016e+00 -1.4624884029998000e+01
+3.1417596643230516e+00 -1.4623116786519001e+01
+
+
+
+
+
+
+import json
+
+import numpy 
+as np
+
+
+
+_set = 'unaries-verification-PBE-v1'
+
+plugin = 'wien2k'
+
+
+
+element = 'H'
+
+configuration = 'X/BCC'
+
+
+
+with 
+open(f'results-{_set}-{plugin}.json',
+'r') 
+as fp:
+
+data = json.load(fp)
+
+num_atoms_in_sim_cell 
+= data['num_atoms_in_sim_cell'][f'{element}-{configuration}']
+
+E0 = data['BM_fit_data'][f'{element}-{configuration}']['E0']
+
+V0 = data['BM_fit_data'][f'{element}-{configuration}']['min_volume']
+
+B0 = data['BM_fit_data'][f'{element}-{configuration}']['bulk_modulus_ev_ang3']
+
+B1 = data['BM_fit_data'][f'{element}-{configuration}']['bulk_deriv']
+
+V = np.array(data['eos_data'][f'{element}-{configuration}'])[:,0]
+
+E = np.array(data['eos_data'][f'{element}-{configuration}'])[:,1]
+
+
+
+print(
+
+f'''# Set:
+{_set}
+
+# Element: {element}
+
+# Configuration: 
+{configuration}
+
+# Plugin: {plugin}
+
+# No. Atoms: {num_atoms_in_sim_cell}
+
+'''
+
+)
+
+print('# BM fit data')
+
+for key, value 
+in data['BM_fit_data'][f'{element}-{configuration}'].items():
+
+print(f'{key:20s}
+{value:3.16e}')
+
+
+print()
+
+
+
+print('# EOS data')
+
+print('# Volume',
+16*'
+', 'Energy')
+
+for row 
+in data['eos_data'][f'{element}-{configuration}']:
+
+print(f'
+{row[0]:0.16e}
+{row[1]:0.16e}')
+
+
+
+Best,
+Austin
+
